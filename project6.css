@@ -1,0 +1,370 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+/* Header Section */
+.header {
+height: 140px;
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 20px;
+flex-wrap: nowrap; /* Everything in one row */
+}
+
+/* Logo Image */
+.logo img {
+width: 120px; /* Default size */
+height: auto;
+max-width: 100%;
+}
+
+/* Contact Section */
+.contact {
+display: flex;
+align-items: center;
+gap: 20px;
+}
+
+/* Contact Item (Icon + Text) */
+.contact-item {
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+/* Icons */
+.contact i {
+font-size: 22px; /* Default for desktop */
+color: #333;
+}
+
+/* Text */
+.contact p {
+margin: 0;
+font-size: 20px; /* Default for desktop */
+font-weight: 600;
+color: #333;
+}
+
+/* Responsive Design */
+
+/* 📱 Phone View */
+@media (max-width: 480px) {
+.header {
+    padding: 10px;
+}
+
+.logo img {
+    width: 150px; /* Smaller logo */
+}
+
+.contact {
+    flex-wrap: nowrap;
+    gap: 8px;
+}
+
+.contact i {
+    font-size: 14px; /* Smaller icons */
+}
+
+.contact p {
+    font-size: 13px; /* Smaller text */
+}
+}
+
+/* 📟 Tablet View */
+@media (min-width: 481px) and (max-width: 768px) {
+.header {
+    padding: 15px;
+}
+
+.logo img {
+    width: 200px;
+}
+
+.contact {
+    gap: 15px;
+}
+
+.contact i {
+    font-size: 18px;
+}
+
+.contact p {
+    font-size: 16px;
+}
+}
+
+/* 💻 Desktop View */
+@media (min-width: 769px) {
+.header {
+    padding: 20px;
+}
+
+.logo img {
+    width: 250px;
+}
+
+.contact {
+    gap: 20px;
+}
+
+.contact i {
+    font-size: 20px;
+}
+
+.contact p {
+    font-size: 20px;
+}
+}
+
+/* Navigation Bar */
+.nav {
+  height: auto; /* Allow dynamic height for wrapping */
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap when space is insufficient */
+  justify-content: space-evenly; /* Distribute items evenly */
+  align-items: center;
+  padding: 5px 0; /* Add padding for better appearance */
+  box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;    
+  padding: 10px 15px;
+  font-size: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav a:hover {
+  background-color: #575757;
+  color: #ddd;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position dropdown below the navbar */
+  left: 0;
+  background-color: #333;
+  color: white;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 20; /* Ensure dropdown is above other elements */
+  min-width: 200px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  padding: 10px 15px;
+  display: block;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #575757;
+}
+
+.arrow-down::after {
+  content: '\25BE';
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+/* Responsive Adjustments */
+
+/* Phone view */
+@media (max-width: 480px) {
+  .nav {
+    flex-direction: row; /* Keep links in a row */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: flex-start; /* Align items to the left */
+    padding: 10px; /* Add padding for better spacing */
+  }
+
+  .nav a {
+    flex: 1 1 auto; /* Allow links to adjust and fit dynamically */
+    text-align: center; /* Center text for smaller screens */
+    padding: 10px 5px; /* Reduce padding to fit more links */
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  .dropdown-content {
+    position: absolute; /* Ensure dropdown overlaps correctly */
+    top: 100%; /* Position dropdown below navbar */
+    left: 0;
+    width: 100%; /* Match dropdown width to navbar */
+    z-index: 20;
+  }
+}
+
+/* Tablet view */
+@media (min-width: 481px) and (max-width: 768px) {
+  .nav {
+    flex-direction: row; /* Keep links in a row */
+    flex-wrap: wrap; /* Allow wrapping for narrower screens */
+    justify-content: space-evenly; /* Spread links evenly */
+    padding: 10px 20px; /* Adjust padding for better spacing */
+  }
+
+  .nav a {
+    padding: 10px; /* Adjust padding for tablet view */
+  }
+
+  .dropdown-content {
+    top: 100%; /* Position dropdown below the parent */
+    left: 0;
+    min-width: 150px; /* Adjust width for tablet view */
+  }
+}
+
+/* Desktop view */
+@media (min-width: 769px){
+  .nav {
+    flex-direction: row; /* Keep links in a row */
+    justify-content: space-evenly; /* Evenly distribute links */
+    padding: 0; /* Remove extra padding */
+  }
+
+  .dropdown-content {
+    position: absolute; /* Ensure dropdown overlaps correctly */
+    top: 100%; /* Position dropdown below the parent */
+    left: 0;
+    min-width: 200px; /* Maintain original width for dropdown */
+  }
+}
+
+/* Section */
+.section1
+{
+  display: flex;
+}
+.section1 img{
+  width: 450px;
+  height:400px;
+  margin: 30px;
+  padding: 30px;
+  border-radius: 50px;
+}
+/* footer section */
+.footer {
+  width: 100%;
+  background-color:#B3C7D6FF;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  color: white;
+  box-sizing: border-box;
+}
+
+.foot1,
+.foot2,
+.foot3 {
+  flex: 1 1 30%; /* Flex properties for responsiveness */
+  max-width: 350px;
+  min-width: 200px;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.foot2 p,
+.foot1 p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.foot3 .image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+  gap: 10px;
+}
+
+.foot3 img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Responsiveness */
+
+/* Phone View */
+@media (max-width: 480px) {
+  .footer {
+    flex-direction: column; /* Stack the sections vertically */
+    align-items: center;
+    text-align: center;
+  }
+
+  .foot1,
+  .foot2,
+  .foot3 {
+    width: 100%; /* Take full width */
+    margin-bottom: 20px;
+  }
+
+  .foot3 .image-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+  }
+}
+
+/* Tablet View */
+@media (min-width: 481px) and (max-width: 768px) {
+  .footer {
+    justify-content: center; /* Center the content */
+    gap: 20px;
+  }
+
+  .foot1,
+  .foot2,
+  .foot3 {
+    flex: 1 1 45%; /* Allow sections to take more space */
+    max-width: 350px;
+    font-size: 20px;
+  }
+
+  .foot3 .image-grid {
+    grid-template-columns: repeat(3, 1fr); /* Keep 3 images per row */
+  }
+}
+
+/* Desktop View */
+@media (min-width: 769px) {
+  .footer {
+    justify-content: space-between;
+  }
+  .foot1,
+  .foot2,
+  .foot3
+  {
+    font-size: 20px;
+  }
+  .foot3 .image-grid {
+    grid-template-columns: repeat(3, 1fr); /* Maintain 3 images per row */
+  }
+}

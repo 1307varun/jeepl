@@ -1,0 +1,442 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+.header {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: nowrap; /* Ensure items are in a single row */
+}
+
+#image {
+  height: 130px;
+  width: auto;  /* Ensures the image maintains its aspect ratio */
+}
+
+/* Contact section */
+.contact {
+display: flex;
+align-items: center; /* Aligns icons and text properly */
+gap: 20px; /* Space between contact items */
+flex-wrap: wrap;
+}
+
+/* Icon and text alignment */
+.contact-item {
+display: flex;
+align-items: center; /* Align icon and text on the same line */
+gap: 5px; /* Reduce space between icon and text */
+}
+
+/* Icons */
+.contact i {
+font-size: 18px;
+vertical-align: middle; /* Ensures proper alignment */
+}
+
+/* Text */
+.contact p {
+margin: 0;
+font-size: 16px;
+}
+
+/* Responsive Design */
+/* Phone View */
+@media (max-width: 480px) {
+.header {
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.contact {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+#image
+{
+  height: 80px;
+  margin-right: 10px;
+}
+.contact i 
+{
+  font-size:15px;
+}
+.contact p 
+{
+  font-size: 13px;
+}
+}
+
+/* Tablet View */
+@media (min-width: 481px) and (max-width: 768px) {
+.header {
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.contact {
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+}
+}
+
+/* Desktop View */
+@media (min-width: 769px) {
+.header {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contact {
+    flex-direction: row;
+    justify-content: flex-end;
+}
+}
+
+
+
+/* Navigation Bar */
+/* General Navigation Bar Styles */
+/* General Navigation Bar Styles */
+.nav {
+  height: auto; /* Allow dynamic height for wrapping */
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap when space is insufficient */
+  justify-content: space-evenly; /* Distribute items evenly */
+  align-items: center;
+  padding: 5px 0; /* Add padding for better appearance */
+  box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav a:hover {
+  background-color: #575757;
+  color: #ddd;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position dropdown below the navbar */
+  left: 0;
+  background-color: #333;
+  color: white;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 20; /* Ensure dropdown is above other elements */
+  min-width: 200px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  padding: 10px 15px;
+  display: block;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #575757;
+}
+
+.arrow-down::after {
+  content: '\25BE';
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+/* Responsive Adjustments */
+
+/* Phone view */
+@media (max-width: 480px) {
+  .nav {
+    flex-direction: row; /* Keep links in a row */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: flex-start; /* Align items to the left */
+    padding: 10px; /* Add padding for better spacing */
+  }
+
+  .nav a {
+    flex: 1 1 auto; /* Allow links to adjust and fit dynamically */
+    text-align: center; /* Center text for smaller screens */
+    padding: 10px 5px; /* Reduce padding to fit more links */
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  .dropdown-content {
+    position: absolute; /* Ensure dropdown overlaps correctly */
+    top: 100%; /* Position dropdown below navbar */
+    left: 0;
+    width: 100%; /* Match dropdown width to navbar */
+    z-index: 20;
+  }
+}
+
+/* Tablet view */
+@media (min-width: 481px) and (max-width: 768px) {
+  .nav {
+    flex-direction: row; /* Keep links in a row */
+    flex-wrap: wrap; /* Allow wrapping for narrower screens */
+    justify-content: space-evenly; /* Spread links evenly */
+    padding: 10px 20px; /* Adjust padding for better spacing */
+  }
+
+  .nav a {
+    padding: 10px; /* Adjust padding for tablet view */
+  }
+
+  .dropdown-content {
+    top: 100%; /* Position dropdown below the parent */
+    left: 0;
+    min-width: 150px; /* Adjust width for tablet view */
+  }
+}
+
+/* Desktop view */
+@media (min-width: 769px){
+  .nav {
+    flex-direction: row; /* Keep links in a row */
+    justify-content: space-evenly; /* Evenly distribute links */
+    padding: 0; /* Remove extra padding */
+  }
+
+  .dropdown-content {
+    position: absolute; /* Ensure dropdown overlaps correctly */
+    top: 100%; /* Position dropdown below the parent */
+    left: 0;
+    min-width: 200px; /* Maintain original width for dropdown */
+  }
+}
+
+/* Section Styles */
+.section {
+  display: none;
+  width: 100%;
+  margin-top: 50px;
+}
+
+#aboutus-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  filter: drop-shadow(1px 1px 20px rgba(0, 0, 0, 0.9));
+  transition: transform 0.4s ease, filter 0.4s ease;
+  margin-right: 30px;
+}
+
+/* Hover Effect */
+#aboutus-img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(2px 2px 30px rgba(0, 0, 0, 0.9));
+}
+
+.inner-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+p {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+  font-style: oblique;
+  margin-top: 30px;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+/* Apply fade-in effect */
+.fade-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+      opacity: 0.5;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+/* Media Queries for Responsiveness */
+
+/* Phones and small devices (max-width 600px) */
+@media (max-width: 600px) {
+  #aboutus-img {
+      width: 300px;
+      height: auto;
+  }
+
+  p {
+      font-size: 13px;
+  }
+}
+
+/* Tablets and smaller laptops (max-width 1024px) */
+@media (max-width: 1024px) {
+  #aboutus-img {
+      width: 450px;
+      height: auto;
+  }
+
+  p {
+      font-size: 16px;
+  }
+}
+
+/* Desktops (min-width 1025px) */
+@media (min-width: 1025px) 
+{
+  .section {
+      display: block;
+  }
+
+  #aboutus-img {
+      width: 450px;
+      height: auto;
+  }
+
+  p {
+      font-size: 18px;
+  }
+}
+
+/* Footer Styles */
+.footer {
+  width: 100%;
+  background-color: #B3C7D6FF;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  color: white;
+  box-sizing: border-box;
+}
+
+.foot1,
+.foot2,
+.foot3 {
+  flex: 1 1 30%; /* Flex properties for responsiveness */
+  max-width: 350px;
+  min-width: 200px;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.foot2 p,
+.foot1 p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.foot3 .image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+  gap: 10px;
+}
+
+.foot3 img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Responsiveness */
+
+/* Phone View */
+@media (max-width: 480px) {
+  .footer {
+    flex-direction: column; /* Stack the sections vertically */
+    align-items: center;
+    text-align: center;
+  }
+
+  .foot1,
+  .foot2,
+  .foot3 {
+    width: 100%; /* Take full width */
+    margin-bottom: 20px;
+  }
+
+  .foot3 .image-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+  }
+}
+
+/* Tablet View */
+@media (min-width: 481px) and (max-width: 768px) {
+  .footer {
+    justify-content: center; /* Center the content */
+    gap: 20px;
+  }
+
+  .foot1,
+  .foot2,
+  .foot3 {
+    flex: 1 1 45%; /* Allow sections to take more space */
+    max-width: 350px;
+  }
+
+  .foot3 .image-grid {
+    grid-template-columns: repeat(3, 1fr); /* Keep 3 images per row */
+  }
+}
+
+/* Desktop View */
+@media (min-width: 769px) {
+  .footer {
+    justify-content: space-between;
+  }
+
+  .foot3 .image-grid {
+    grid-template-columns: repeat(3, 1fr); /* Maintain 3 images per row */
+  }
+}
