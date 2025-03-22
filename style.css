@@ -298,63 +298,6 @@ color: #333;
   }
 }
 
-/* Section1 */
-/* General Styling for Section */
-/* .section1 {
-  height: auto; 
-  width: 100%;
-  background-color: lightgray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; 
-  padding: 10px 0;
-}
-
-#image-slider {
-  width: 100%; 
-}
-
-.carousel-inner {
-  width: 100%; 
-}
-
-.carousel-item img {
-  width: 100%; 
-  height: auto; 
-  object-fit: cover;
-}
-@media (max-width: 480px) {
-  .section1 {
-      height: auto; 
-      padding: 5px 0; 
-  }
-
-  .carousel-item img {
-      max-height: 300px; 
-  }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-  .section1 {
-      height: auto; 
-      padding: 10px 0; 
-  }
-
-  .carousel-item img {
-      max-height: 400px; 
-  }
-}
-
-@media (min-width: 769px)and (max-width:1280px){
-  .section1 {
-      height: 400px; 
-  }
-
-  .carousel-item img {
-      max-height:400px; 
-  }
-} */
 .imageSliding
 {
   height: 500px;
@@ -606,8 +549,8 @@ text-align: center; /* Center align the heading for better visuals */
 }
 
 .box1 {
-height: 450px;
-width: 450px;
+height: 400px;
+width: 400px;
 background-color: cadetblue;
 position: relative;
 display: flex;
@@ -622,25 +565,8 @@ transition: transform 0.4s ease;
 transform: scale(1.05);
 }
 
-/* .red-box {
-height: 50px;
-background-color: red;
-color: white;
-display: flex;
-justify-content: center;
-align-items: center;
-font-size: 20px; 
-font-weight: bold;
-position: absolute;
-bottom: 0;
-left: 0;
-width: 100%;
-border-bottom-left-radius: 15px;
-border-bottom-right-radius: 15px;
-} */
-
 #image1 {
-height: 450px;
+height: 400px;
 width: 100%; /* Match the width of the parent container */
 object-fit: cover; /* Ensure images maintain aspect ratio */
 border: 1px solid black;
@@ -683,12 +609,12 @@ border: 1px solid black;
 /* Desktop View (769px and above) */
 @media (min-width: 769px) {
 .box1 {
-    height: 350px;
-    width: 350px;
+    height: 300px;
+    width: 300px;
 }
 
 #image1 {
-    height: 350px;
+    height: 300px;
 }
 
 .red-box {
