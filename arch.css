@@ -8,7 +8,6 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
 }
-
 .header {
   height: 150px;
   width: 100%;
@@ -24,106 +23,90 @@ body {
   width: auto;  /* Ensures the image maintains its aspect ratio */
 }
 
+/* Contact section */
 .contact {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+display: flex;
+align-items: center; /* Aligns icons and text properly */
+gap: 20px; /* Space between contact items */
+flex-wrap: wrap;
+}
+
+/* Icon and text alignment */
+.contact-item {
+display: flex;
+align-items: center; /* Align icon and text on the same line */
+gap: 5px; /* Reduce space between icon and text */
+}
+
+/* Icons */
+.contact i {
+font-size: 18px;
+vertical-align: middle; /* Ensures proper alignment */
+}
+
+/* Text */
+.contact p {
+margin: 0;
+font-size: 16px;
+}
+
+/* Responsive Design */
+/* Phone View */
+@media (max-width: 480px) {
+.header {
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.contact {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+#image
+{
+  height: 80px;
   margin-right: 10px;
 }
-
-.contact p {
-  margin-right: 20px; /* Adds space between phone/email */
+.contact i 
+{
+  font-size:15px;
+}
+.contact p 
+{
+  font-size: 13px;
+}
 }
 
-.contact a {
-  margin-left: 15px; /* Adds space between Instagram/Facebook icons */
-}
-/* Header section Responsiveness */
-/* Phone view */
-@media (max-width: 480px) {
-  .header {
-      flex-wrap: wrap; /* Ensures wrapping for smaller screens */
-      height: auto; /* Allows height to adjust dynamically */
-      justify-content: center; /* Center-aligns items for balance */
-      padding: 10px;
-  }
-
-  #image {
-      height: 80px; /* Reduces image size */
-      margin-right: 10px; /* Adds spacing between image and contact */
-  }
-
-  .contact {
-      flex-direction: row; /* Keeps items in a row */
-      flex-wrap: wrap; /* Allows wrapping if space runs out */
-      justify-content: center; /* Center-aligns contact items */
-      gap: 10px; /* Adds space between elements */
-  }
-
-  .contact p {
-      margin: 0 10px; /* Adds spacing between text items */
-      font-size: 12px; /* Reduces font size for smaller screens */
-  }
-
-  .contact a {
-      margin-left: 10px; /* Adds space for social icons */
-  }
-}
-
-/* Tablet view */
+/* Tablet View */
 @media (min-width: 481px) and (max-width: 768px) {
-  .header {
-      flex-wrap: nowrap; /* Ensures items stay in one row */
-      height: auto;
-      justify-content: space-between; /* Spreads items evenly */
-      padding: 15px;
-  }
-
-  #image {
-      height: 100px; /* Slightly larger image for tablets */
-  }
-
-  .contact {
-      flex-wrap: nowrap; /* Prevents wrapping */
-      justify-content: space-between; /* Spreads contact items evenly */
-      gap: 15px; /* Adds space between elements */
-  }
-
-  .contact p {
-      margin: 0 10px; /* Adjusts spacing between text items */
-  }
-
-  .contact a {
-      margin-left: 15px; /* Adds space for social icons */
-  }
+.header {
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
 }
 
-/* Desktop view */
-@media (min-width: 769px) and (max-width: 1280px) {
-  .header {
-      height: 150px; /* Maintains the original height */
-      justify-content: space-between; /* Aligns items to fill space */
-      padding: 20px;
-  }
-
-  #image {
-      height: 130px; /* Maintains desktop image size */
-  }
-
-  .contact {
-      flex-wrap: nowrap; /* Ensures all items stay in one row */
-      justify-content: flex-end; /* Aligns items to the right */
-  }
-
-  .contact p {
-      margin-right: 10px; /* Spacing between phone/email */
-  }
-
-  .contact a {
-      margin-left: 15px; /* Space between social icons */
-  }
+.contact {
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+}
 }
 
+/* Desktop View */
+@media (min-width: 769px) {
+.header {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contact {
+    flex-direction: row;
+    justify-content: flex-end;
+}
+}
 
 /* Navigation Bar */
 /* General Navigation Bar Styles */

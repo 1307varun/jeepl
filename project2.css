@@ -8,123 +8,106 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
 }
-/* Header Section */
 .header {
-height: 140px;
-width: 100%;
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 10px 20px;
-flex-wrap: nowrap; /* Everything in one row */
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: nowrap; /* Ensure items are in a single row */
 }
 
-/* Logo Image */
-.logo img {
-width: 120px; /* Default size */
-height: auto;
-max-width: 100%;
+#image {
+  height: 130px;
+  width: auto;  /* Ensures the image maintains its aspect ratio */
 }
 
-/* Contact Section */
+/* Contact section */
 .contact {
 display: flex;
-align-items: center;
-gap: 20px;
+align-items: center; /* Aligns icons and text properly */
+gap: 20px; /* Space between contact items */
+flex-wrap: wrap;
 }
 
-/* Contact Item (Icon + Text) */
+/* Icon and text alignment */
 .contact-item {
 display: flex;
-align-items: center;
-gap: 8px;
+align-items: center; /* Align icon and text on the same line */
+gap: 5px; /* Reduce space between icon and text */
 }
 
 /* Icons */
 .contact i {
-font-size: 22px; /* Default for desktop */
-color: #333;
+font-size: 18px;
+vertical-align: middle; /* Ensures proper alignment */
 }
 
 /* Text */
 .contact p {
 margin: 0;
-font-size: 20px; /* Default for desktop */
-font-weight: 600;
-color: #333;
+font-size: 16px;
 }
 
 /* Responsive Design */
-
-/* 📱 Phone View */
+/* Phone View */
 @media (max-width: 480px) {
 .header {
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
     padding: 10px;
 }
 
-.logo img {
-    width: 150px; /* Smaller logo */
-}
-
 .contact {
-    flex-wrap: nowrap;
-    gap: 8px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+#image
+{
+  height: 80px;
+  margin-right: 10px;
+}
+.contact i 
+{
+  font-size:15px;
+}
+.contact p 
+{
+  font-size: 13px;
+}
 }
 
-.contact i {
-    font-size: 14px; /* Smaller icons */
-}
-
-.contact p {
-    font-size: 13px; /* Smaller text */
-}
-}
-
-/* 📟 Tablet View */
+/* Tablet View */
 @media (min-width: 481px) and (max-width: 768px) {
 .header {
-    padding: 15px;
-}
-
-.logo img {
-    width: 200px;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
 }
 
 .contact {
+    flex-direction: row;
+    justify-content: center;
     gap: 15px;
 }
-
-.contact i {
-    font-size: 18px;
 }
 
-.contact p {
-    font-size: 16px;
-}
-}
-
-/* 💻 Desktop View */
+/* Desktop View */
 @media (min-width: 769px) {
 .header {
-    padding: 20px;
-}
-
-.logo img {
-    width: 250px;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .contact {
-    gap: 20px;
+    flex-direction: row;
+    justify-content: flex-end;
+}
 }
 
-.contact i {
-    font-size: 20px;
-}
-
-.contact p {
-    font-size: 20px;
-}
-}
 
 /* Navigation Bar */
 .nav {
