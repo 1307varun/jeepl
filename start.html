@@ -15,10 +15,14 @@
 
     /* Container for the image */
     .image-container {
-      position: relative;
+      position: fixed;
       width: 100%;
       height: 100vh;
       overflow: hidden;
+      top: 0;
+      left: 0;
+      background: black;
+      z-index: 9999; /* Ensure it's above other content */
     }
 
     #fullscreen-image {
@@ -28,7 +32,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      transition: transform 0.8s ease-in-out; /* Smooth animation */
+      transition: transform 0.8s ease-in-out;
     }
 
     /* Style the arrow */
@@ -52,32 +56,32 @@
   </style>
 </head>
 <body>
+
   <div class="image-container">
     <img src="Web-size-wall-paper-jpg (1).jpg" alt="Fullscreen Image" id="fullscreen-image">
     <div class="arrow" id="arrow-up">↑</div>
   </div>
 
   <script>
-    // Get the image and arrow elements
+    // Get elements
     const image = document.getElementById('fullscreen-image');
     const arrow = document.getElementById('arrow-up');
+    const imageContainer = document.querySelector('.image-container');
 
-    let isMovedUp = false; // Track if the image has moved
-
-    // Function to move the image up
+    // Function to move the image up and redirect to index.html
     function moveImageUp() {
-      if (!isMovedUp) {
-        image.style.transform = 'translateY(-100%)'; // Move image up
-        isMovedUp = true;
-      } else {
-        image.style.transform = 'translateY(0)'; // Reset position
-        isMovedUp = false;
-      }
+      image.style.transform = 'translateY(-100%)'; // Move image up
+
+      // Redirect to index.html after animation completes
+      setTimeout(() => {
+        window.location.href = 'index.html'; // Change this if index.html is in a different folder
+      }, 800); // Matches transition duration
     }
 
     // Add event listeners
     arrow.addEventListener('click', moveImageUp);
     image.addEventListener('dblclick', moveImageUp);
   </script>
+
 </body>
 </html>
