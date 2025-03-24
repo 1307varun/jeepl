@@ -514,101 +514,83 @@ font-size: 16px;
 }
 /* Section4 */
 .section4 {
-width: 100%;
-/* background-color: antiquewhite; */
-display: flex;
-flex-direction: row;
-flex-wrap: wrap; /* Enable wrapping for smaller screens */
-justify-content: space-around; /* Center the content for smaller screens */
-align-items: center;
-gap: 10px; /* Add spacing between items */
-padding: 10px; /* Add padding for better spacing */
-box-sizing: border-box; /* Ensure padding is included in width */
-}
-
-#header-fire {
-margin-left: auto;
-margin-right: auto;
-text-align: center; /* Center align the heading for better visuals */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  justify-content: space-around; /* Distribute space evenly */
+  align-items: center;
+  gap: 10px; /* Add spacing between items */
+  padding: 10px; /* Add padding for better spacing */
+  box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 .box1 {
-height: 400px;
-width: 400px;
-background-color: cadetblue;
-position: relative;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-border-radius: 15px; /* Add rounded corners */
-overflow: hidden; /* Ensure the red section also has rounded corners */
-transition: transform 0.4s ease;
+  height: 300px; /* Default height for desktop */
+  width: calc(25% - 20px); /* Default width for desktop */
+  background-color: cadetblue;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 15px; /* Add rounded corners */
+  overflow: hidden; /* Ensure the red section also has rounded corners */
+  transition: transform 0.4s ease;
 }
 
 .box1:hover {
-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 #image1 {
-height: 400px;
-width: 100%; /* Match the width of the parent container */
-object-fit: cover; /* Ensure images maintain aspect ratio */
-border: 1px solid black;
+  height: 100%; /* Fill the height of the box */
+  width: 100%; /* Fill the width of the box */
+  object-fit: cover; /* Ensure images maintain aspect ratio */
+  border: 1px solid black;
 }
 
 /* Responsive Styles */
 
 /* Phone View (max-width: 480px) */
 @media (max-width: 480px) {
-.box1 {
-    height: 200px; /* Reduce box height for smaller screens */
-    width: 80%; /* Use full width */
-}
-
-#image1 {
-    height: 250px; /* Adjust image height */
-}
-
-.red-box {
-    font-size: 16px; /* Reduce text size */
-}
-}
+  .box1 {
+      height: 200px; /* Reduce box height for smaller screens */
+      width: 80%; /* Use full width */
+  }
+  
+  #image1 {
+      height: 250px; /* Adjust image height */
+  }
+  
+  .red-box {
+      font-size: 16px; /* Reduce text size */
+  }
+  }
 
 /* Tablet View (481px to 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
-.box1 {
-    height: 250px; /* Slightly smaller height for tablets */
-    width: 45%; /* Two boxes per row */
-}
+  .box1 {
+    height: 200px; /* Slightly smaller height for tablets */
+    width: calc(50% - 20px); /* Two boxes per row */
+  }
 
-#image1 {
-    height: 250px; /* Adjust image height */
-}
-
-.red-box {
-    font-size: 18px; /* Adjust text size for tablets */
-}
+  #image1 {
+    height: 200px; /* Adjust image height */
+    width: 100%; /* Ensure width fills the container */
+  }
 }
 
 /* Desktop View (769px and above) */
 @media (min-width: 769px) {
-.box1 {
-  height: 300px;
-  width: 300px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
+  .box1 {
+    height: 300px; /* Fixed height for desktop */
+    width: calc(25% - 20px); /* Four boxes per row */
+  }
 
-#image1 {
-  height: 100%;
-  width: 100%;
-  object-fit: cover; /* Ensures images fit well */}
-
-.red-box {
-    font-size: 20px;
-}
+  #image1 {
+    height: 100%; /* Fill the height of the box */
+    width: 100%; /* Fill the width of the box */
+  }
 }
 /* footer section */
 .footer {
