@@ -307,8 +307,12 @@ p {
 /* Phones and small devices (max-width 600px) */
 @media (max-width: 600px) {
   #aboutus-img {
-      width: 300px;
+      width: 200px;
       height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 30px;
   }
 
   p {
@@ -319,8 +323,12 @@ p {
 /* Tablets and smaller laptops (max-width 1024px) */
 @media (max-width: 1024px) {
   #aboutus-img {
-      width: 450px;
+      width: 350px;
       height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 30px;
   }
 
   p {
@@ -338,6 +346,10 @@ p {
   #aboutus-img {
       width: 450px;
       height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 30px;
   }
 
   p {
