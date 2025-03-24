@@ -7,11 +7,8 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
-  overflow: hidden;
 }
-body.scrolling-enabled {
-  overflow: auto; /* Enable scrolling when needed */
-}
+
 /* Container for the image */
 .image-container {
 position: relative;
