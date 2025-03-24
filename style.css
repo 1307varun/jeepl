@@ -524,7 +524,11 @@ font-size: 16px;
   padding: 10px; /* Add padding for better spacing */
   box-sizing: border-box; /* Ensure padding is included in width */
 }
-
+#header-fire {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Center align the heading for better visuals */
+  }
 .box1 {
   height: 300px; /* Default height for desktop */
   width: calc(25% - 20px); /* Default width for desktop */
