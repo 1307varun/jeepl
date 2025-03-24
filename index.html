@@ -245,35 +245,69 @@
    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>  
     <script>
-      // Get the image and arrow elements
-      const image = document.getElementById('fullscreen-image');
-      const arrow = document.getElementById('arrow-up');
-      const imageContainer = document.querySelector('.image-container');
+      // // Get the image and arrow elements
+      // const image = document.getElementById('fullscreen-image');
+      // const arrow = document.getElementById('arrow-up');
+      // const imageContainer = document.querySelector('.image-container');
     
-      let isMovedUp = false; // Track if the image has moved
+      // let isMovedUp = false; // Track if the image has moved
     
-      // Function to move the image up
-      function moveImageUp() {
-        if (!isMovedUp) {
-          image.style.transform = 'translateY(-100%)'; // Move image up
+      // // Function to move the image up
+      // function moveImageUp() {
+      //   if (!isMovedUp) {
+      //     image.style.transform = 'translateY(-100%)'; // Move image up
     
-          // Delay the collapse of the container until after the transition
-          setTimeout(() => {
-            imageContainer.classList.add('moved-up'); // Collapse the container
-          }, 800); // 800ms matches the transition duration
-          isMovedUp = true;
-        } else {
-          imageContainer.classList.remove('moved-up'); // Restore the container first
-          setTimeout(() => {
-            image.style.transform = 'translateY(0)'; // Reset position
-          }, 10); // Small delay to allow the container to expand
-          isMovedUp = false;
-        }
-      }
+      //     // Delay the collapse of the container until after the transition
+      //     setTimeout(() => {
+      //       imageContainer.classList.add('moved-up'); // Collapse the container
+      //     }, 800); // 800ms matches the transition duration
+      //     isMovedUp = true;
+      //   } else {
+      //     imageContainer.classList.remove('moved-up'); // Restore the container first
+      //     setTimeout(() => {
+      //       image.style.transform = 'translateY(0)'; // Reset position
+      //     }, 10); // Small delay to allow the container to expand
+      //     isMovedUp = false;
+      //   }
+      // }
     
-      // Add event listeners
-      arrow.addEventListener('click', moveImageUp);
-      image.addEventListener('dblclick', moveImageUp);
+      // // Add event listeners
+      // arrow.addEventListener('click', moveImageUp);
+      // image.addEventListener('dblclick', moveImageUp);
+      // Get the elements
+const image = document.getElementById("fullscreen-image");
+const arrow = document.getElementById("arrow-up");
+const imageContainer = document.querySelector(".image-container");
+const body = document.body;
+
+let isMovedUp = false; // Track if the image has moved
+
+// Function to move the image up
+function moveImageUp() {
+  if (!isMovedUp) {
+    image.style.transform = "translateY(-100%)"; // Move image up
+
+    // Delay collapsing the container and enabling scrolling
+    setTimeout(() => {
+      imageContainer.classList.add("moved-up"); // Collapse the container
+      body.classList.add("scrolling-enabled"); // Enable scrolling
+    }, 800); // Matches the transition duration
+
+    isMovedUp = true;
+  }
+}
+
+// Prevent scrolling until the image moves up
+window.addEventListener("wheel", (event) => {
+  if (!isMovedUp) {
+    event.preventDefault(); // Stop scrolling
+  }
+}, { passive: false }); // Ensure event.preventDefault() works
+
+// Add event listeners
+arrow.addEventListener("click", moveImageUp);
+image.addEventListener("dblclick", moveImageUp);
+
     </script> 
 </body>
 </html> 
