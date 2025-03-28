@@ -244,12 +244,13 @@ font-size: 16px;
   display: flex;
   flex-wrap: wrap;  /* Allows images to wrap on smaller screens */
   justify-content: center; /* Center images */
+  justify-content: space-evenly;
   gap: 20px; /* Space between images */
 }
 
 .section1 img {
   width: 70%;  /* Full width by default */
-  max-width: 450px; /* Prevents images from getting too large */
+  max-width: 350px; /* Prevents images from getting too large */
   height: auto; /* Maintain aspect ratio */
   margin: 10px;
   padding: 10px;
